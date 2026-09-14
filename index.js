@@ -18,12 +18,12 @@ const configuracao = {
 new Phaser.Game(configuracao);
 
 function preload() {
-    this.load.image("quadrado", "img/quadrado.png");
+    this.load.image("cada", "img/cada.png");
 }
 
 function create() {
     
-    this.jogador = this.physics.add.image(100, 300, "quadrado");
+    this.jogador = this.physics.add.image(100, 300, "cada");
     this.jogador.setDisplaySize(70, 70);
     this.jogador.setCollideWorldBounds(true);
 
