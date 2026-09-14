@@ -18,7 +18,7 @@ const configuracao = {
 new Phaser.Game(configuracao);
 
 function preload() {
-    this.load.image("quadrado", "img/quadrado.png");
+    this.load.image("quadrado", "quadrado.png");
 }
 
 function create() {
