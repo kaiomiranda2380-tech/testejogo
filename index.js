@@ -3,7 +3,7 @@ const configuracao = {
     width: 800,
     height: 600,
     parent: "jogo",
-    backgroundColor: "rgb(32, 32, 32)",
+    backgroundColor: "black",
     physics: {
         default: "arcade",
         arcade: { debug: false }
