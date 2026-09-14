@@ -3,8 +3,12 @@ let teclas;
 
 const configuracao = {
     type: Phaser.AUTO,
-    width: 1900,
-    height: 920,
+
+    width: 800,
+    height: 600,
+
+    parent: "jogo",
+
     backgroundColor: "rgb(32, 32, 32)",
 
     physics: {
@@ -24,15 +28,17 @@ const configuracao = {
 const jogo = new Phaser.Game(configuracao);
 
 function preload() {
+
+    this.load.image("personagem", "img/personagem.png");
 }
 
 function create() {
 
-    jogador = this.add.rectangle(100, 300, 50, 50, 0x00ffff);
+    jogador = this.physics.add.image(100, 300, "personagem");
 
-    this.physics.add.existing(jogador);
+    jogador.setDisplaySize(70, 70);
 
-    jogador.body.setCollideWorldBounds(true);
+    jogador.setCollideWorldBounds(true);
 
     teclas = this.input.keyboard.createCursorKeys();
 
@@ -44,21 +50,22 @@ function create() {
 
 function update() {
 
-    jogador.body.setVelocity(0);
+    jogador.setVelocity(0);
 
     if (teclas.left.isDown) {
-        jogador.body.setVelocityX(-200);
+        jogador.setVelocityX(-200);
     }
 
     if (teclas.right.isDown) {
-        jogador.body.setVelocityX(200);
+        jogador.setVelocityX(200);
     }
 
     if (teclas.up.isDown) {
-        jogador.body.setVelocityY(-200);
+        jogador.setVelocityY(-200);
     }
 
     if (teclas.down.isDown) {
-        jogador.body.setVelocityY(200);
+        jogador.setVelocityY(200);
     }
 }
+
